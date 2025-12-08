@@ -269,7 +269,23 @@ console.log(prac_stim)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+var valid_prac_combinations = {
+  "1": "Z08",
+  "2": "Z14",
+  "3": "Z19",
+  "4": "Z45",
+  "5": "Z01",
+  "6": "Z47",
+  "7": "Z03",
+  "8": "Z03",
+  "9": "Z52",
+  "10": "Z30",
+  "11": "Z26",
+  "12": "Z29",
+  "13": "Z63",
+  "14": "Z81",
+  "15": "Z04"
+};
 
 
 var preload_prac = {     
@@ -278,7 +294,11 @@ var preload_prac = {
       show_progress_bar: true,
       show_detailed_errors: true
     }
+
+if (valid_prac_combinations[idnum] === set1) {
     timeline.push(preload_prac);
+}
+
 
 		var instruction_1 = {
       type: jsPsychHtmlButtonResponse,
@@ -529,23 +549,7 @@ var interval = {
 
     // Define the valid id-pool combinations
 // Define the valid id-pool combinations
-var valid_prac_combinations = {
-  "1": "Z08",
-  "2": "Z14",
-  "3": "Z19",
-  "4": "Z45",
-  "5": "Z01",
-  "6": "Z47",
-  "7": "Z03",
-  "8": "Z03",
-  "9": "Z52",
-  "10": "Z30",
-  "11": "Z26",
-  "12": "Z29",
-  "13": "Z63",
-  "14": "Z81",
-  "15": "Z04"
-};
+
 
 // Check if current id-pool combination is valid
 if (valid_prac_combinations[idnum] === set1) {
@@ -618,4 +622,5 @@ if (valid_prac_combinations[idnum] === set1) {
 
     jsPsych.run(timeline);
     </script>
+
 </html>
